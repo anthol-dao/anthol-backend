@@ -1,0 +1,26 @@
+[package]
+publish = false
+name = "anthol_backend"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+shared.workspace = true
+
+anthol_store.workspace = true
+anyhow = { workspace = true, features = ["backtrace", "std"] }
+canbench-rs = { workspace = true, optional = true }
+candid.workspace = true
+futures = "0.3.30"
+ic-cdk = "0.15.0"
+ic-cdk-macros = "0.15.0"
+ic-stable-structures = "0.6.7"
+nestify.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+pocket-ic = "6.0.0"
