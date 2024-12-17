@@ -7,7 +7,7 @@ use ic_stable_structures::{
     memory_manager::{MemoryId, MemoryManager, VirtualMemory},
     {DefaultMemoryImpl, StableBTreeMap, StableLog},
 };
-use shared::{
+use common::{
     actor::{
         account::{
             AccountPageError, AccountPageResponse, SetUserProfileError, SetUserProfileRequest,
@@ -111,8 +111,8 @@ async fn test_init() {
 
 #[query(composite = true)]
 async fn get_item_page_data(
-    arg: shared::item::ItemPageRequest,
-) -> Result<shared::item::ItemPageResponse, String> {
+    arg: common::item::ItemPageRequest,
+) -> Result<common::item::ItemPageResponse, String> {
     match store::get_item_page_data(arg).await {
         Ok(res) => Ok(res),
         Err(e) => {
@@ -131,8 +131,8 @@ async fn get_home_page_data(arg: HomePageRequest) -> Result<HomePageResponse, Ho
 fn get_user_basket_page_data(
     currency: Currency,
 ) -> Result<
-    shared::route::basket::UserBasketPageResponse,
-    (shared::route::basket::UserBasketPageError, String),
+    common::route::basket::UserBasketPageResponse,
+    (common::route::basket::UserBasketPageError, String),
 > {
     route::basket::get_user_basket_page_data(currency)
 }

@@ -6,7 +6,7 @@ use crate::{
     ACTORS,
 };
 use ic_cdk::api;
-use shared::actor::account::{AccountPageError, AccountPageResponse, UserAccountPageResponse};
+use common::actor::account::{AccountPageError, AccountPageResponse, UserAccountPageResponse};
 
 pub fn get_account_page_data() -> Result<AccountPageResponse, AccountPageError> {
     let caller = api::caller();

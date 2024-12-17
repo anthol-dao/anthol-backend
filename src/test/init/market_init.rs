@@ -1,4 +1,4 @@
-use shared::{
+use common::{
     item::{
         attr::AttrKeys, tag::Tag, ItemAttrSpecificDataInMarket, ItemAttrSpecificDataInMarketV1,
         ItemDataInMarket, ItemDataInMarketV1, ItemId,

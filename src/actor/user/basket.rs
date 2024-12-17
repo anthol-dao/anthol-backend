@@ -1,5 +1,5 @@
 use candid::{CandidType, Deserialize};
-use shared::{
+use common::{
     item::{
         attr::{AttrIndexesResponse, AttrKeys},
         ItemKey, ItemName,

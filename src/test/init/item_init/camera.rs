@@ -4,7 +4,7 @@ use anthol_store::item::{
     spec::{ItemSpecsV1, SpecCategory, SpecKey, SpecLabel},
     Item, ItemVersion,
 };
-use shared::{
+use common::{
     item::{attr::AttrKeys, ItemId, MediaDataWithCaption, Tag},
     media::{
         mime::{Mime, MimeImage},

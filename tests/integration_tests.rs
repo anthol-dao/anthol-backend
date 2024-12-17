@@ -1,6 +1,6 @@
 use candid::{decode_one, encode_one, Principal};
 use pocket_ic::{PocketIc, WasmResult};
-use shared::{
+use common::{
     item::attr::{AttrKeys, AttrRequest},
     unit::Currency,
 };
@@ -33,10 +33,10 @@ fn test_item_get() {
 
     let balance_after_init = pic.cycle_balance(backend_canister);
 
-    let arg = shared::item::ItemPageRequest {
+    let arg = common::item::ItemPageRequest {
         store_id: "specimens".try_into().unwrap(),
         market_id: "specimens-authorized".try_into().unwrap(),
-        request_to_store: shared::item::ItemPageRequestToStoreCanister {
+        request_to_store: common::item::ItemPageRequestToStoreCanister {
             item_id: "polaroid-onestep-2".try_into().unwrap(),
             attr: AttrRequest {
                 keys: AttrKeys::default(),
@@ -59,7 +59,7 @@ fn test_item_get() {
 
     let balance_after_query = pic.cycle_balance(backend_canister);
 
-    let result: Option<shared::item::ItemPageResponse> = decode_one(&response).unwrap();
+    let result: Option<common::item::ItemPageResponse> = decode_one(&response).unwrap();
     let result = result.unwrap();
     assert_eq!(
         result.static_data.unwrap().data_from_store.item_name,

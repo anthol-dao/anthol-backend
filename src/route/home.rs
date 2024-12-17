@@ -4,7 +4,7 @@ use crate::{
     ACTORS,
 };
 use ic_cdk::api;
-use shared::{
+use common::{
     market::MarketPrincipal,
     route::home::{HomePageError, HomePageRequest, HomePageResponse},
 };

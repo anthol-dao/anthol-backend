@@ -7,7 +7,7 @@ use crate::{
     ACTORS, ITEM_FLUCTUATE_DATA, LOG, MARKETS, STORES,
 };
 use ic_cdk::api::caller;
-use shared::{
+use common::{
     route::basket::{BasketItemError, UserBasketPageError, UserBasketPageResponse},
     unit::Currency,
 };
@@ -57,8 +57,8 @@ pub fn get_user_basket_page_data(
 fn get_basket_physical_items_response(
     currency: Currency,
     vec: Vec<user::basket::PhysicalItemGroupOfSender>,
-) -> Vec<shared::route::basket::PhysicalItemGroupOfSender> {
-    let mut res: Vec<shared::route::basket::PhysicalItemGroupOfSender> = Vec::new();
+) -> Vec<common::route::basket::PhysicalItemGroupOfSender> {
+    let mut res: Vec<common::route::basket::PhysicalItemGroupOfSender> = Vec::new();
 
     for group in vec {
         match group {
@@ -113,7 +113,7 @@ fn get_basket_physical_items_response(
                                         // handle error by returning default values
                                     });
 
-                                Ok(shared::route::basket::PhysicalItemInBasket {
+                                Ok(common::route::basket::PhysicalItemInBasket {
                                     market_id: market.id,
                                     market_name: market.name.clone(),
                                     item_id,
@@ -128,15 +128,15 @@ fn get_basket_physical_items_response(
                             })
                             .collect::<Vec<
                                 Result<
-                                    shared::route::basket::PhysicalItemInBasket,
+                                    common::route::basket::PhysicalItemInBasket,
                                     (
                                         BasketItemError,
-                                        Option<shared::route::basket::PhysicalItemInBasket>,
+                                        Option<common::route::basket::PhysicalItemInBasket>,
                                     ),
                                 >,
                             >>();
 
-                        res.push(shared::route::basket::PhysicalItemGroupOfSender {
+                        res.push(common::route::basket::PhysicalItemGroupOfSender {
                             store_id: store.id,
                             store_name: store.name.clone(),
                             items,
@@ -155,10 +155,10 @@ fn get_basket_digital_items_response(
     vec: Vec<user::basket::DigitalItemInBasket>,
 ) -> Vec<
     Result<
-        shared::route::basket::DigitalItemInBasket,
+        common::route::basket::DigitalItemInBasket,
         (
             BasketItemError,
-            Option<shared::route::basket::DigitalItemInBasket>,
+            Option<common::route::basket::DigitalItemInBasket>,
         ),
     >,
 > {

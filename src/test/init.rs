@@ -10,7 +10,7 @@ use crate::{
 };
 use candid::Principal;
 use ic_cdk::api;
-use shared::{actor::account::AccountImage, item::Tag, market::MarketPrincipal, store::StoreName, util::network::{dfx_network, DfxNetwork}};
+use common::{actor::account::AccountImage, item::Tag, market::MarketPrincipal, store::StoreName, util::network::{dfx_network, DfxNetwork}};
 use std::collections::BTreeMap;
 
 mod item_init;

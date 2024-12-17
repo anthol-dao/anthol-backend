@@ -1,6 +1,6 @@
 use candid::{CandidType, Decode, Deserialize, Encode};
 use ic_stable_structures::{storable::Bound, Storable};
-use shared::{
+use common::{
     item::{attr::Stock, ItemId, ItemName},
     unit::{Currency, Price},
 };

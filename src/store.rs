@@ -10,7 +10,7 @@ use ic_cdk::api::{
     },
 };
 use ic_stable_structures::{storable::Bound, Storable};
-use shared::{
+use common::{
     item::{
         get_item_page_response, ItemId, ItemKey, ItemPageError, ItemPageErrorCode,
         ItemPageFromStoreErrorCode, ItemPageRequest, ItemPageResponse,

@@ -2,7 +2,7 @@ use super::ActorData;
 use crate::ACTORS;
 use candid::{CandidType, Deserialize};
 use ic_cdk::api;
-use shared::{
+use common::{
     actor::account::{AccountImage, SetUserProfileError, SetUserProfileRequest},
     item::ItemKey,
     market::MarketPrincipal,

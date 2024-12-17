@@ -9,7 +9,7 @@ use ic_cdk::api::{
     },
 };
 use ic_stable_structures::{storable::Bound, Storable};
-use shared::{
+use common::{
     item::{ItemDataInMarket, ItemId},
     market::{
         MarketDataResponseWithItemGlances, MarketId, MarketInitArg, MarketName, MarketPrincipal,

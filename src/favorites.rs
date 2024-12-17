@@ -1,4 +1,4 @@
-use shared::{item::ItemId, market::MarketId, store::StoreId};
+use common::{item::ItemId, market::MarketId, store::StoreId};
 
 pub struct FavoriteItemV1 {
     pub item_id: ItemId,
